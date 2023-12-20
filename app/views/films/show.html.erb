@@ -15,7 +15,8 @@
     <p><strong>Director:</strong> <%= @film.director %></p>
     <p><strong>Cast:</strong> <%= @film.actors %></p>
     <p><strong>Description:</strong> <%= @film.description %></p>
-    <p><strong>Streaming:</strong></p> <%= @film.trailer %>
+ <%= link_to 'Streaming', @film.trailer, target: '_blank', rel: 'noopener noreferrer' if @film.trailer.present? %>
+
   </div>
 
   <%= link_to 'Back to Films', films_path, class: 'back-link' %>
