@@ -1,31 +1,44 @@
+body {
+  background-color: #333; // Sfondo scuro per la pagina
+  color: #fff; // Testo chiaro per contrastare con lo sfondo scuro
+  font-family: Arial, sans-serif; // Un esempio di font
+}
+
+h1 {
+  text-align: center; // Centra il testo dell'h1
+  margin-bottom: 50px; // Aggiunge spazio sotto l'h1
+  font-family: 'Times New Roman', Times, serif; // Un altro esempio di font
+  font-style: italic;
+  font-size: 3em;
+}
+
 .films-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); // Tre colonne
   gap: 20px;
+  width: 40%; // Larghezza ridotta per la griglia
+  margin: 40px auto; // Centra la griglia orizzontalmente con un po' di spazio sopra e sotto
 }
 
 .film {
-  background: #f8f8f8;
-  border: 1px solid #eaeaea;
-  padding: 10px;
+  background: #444; // Sfondo leggermente più chiaro per le card
+  border: 1px solid #555; // Bordo per le card
   border-radius: 5px;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .film-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-size: cover;
+  background-position: center;
+}
+
+.film-title {
+  padding: 10px;
   text-align: center;
-  margin-bottom: 10px;
-}
-
-.view-button {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
-  text-decoration: none;
-  border-radius: 3px;
-  margin-top: 10px;
-}
-
-.view-button:hover {
-  background-color: #0056b3;
+  background-color: rgba(0, 0, 0, 0.5); // Sfondo semi-trasparente per il titolo
+  color: white; // Testo chiaro
+  font-size: 1.2em;
 }
