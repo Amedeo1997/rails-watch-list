@@ -1,25 +1,26 @@
 <h1>Films</h1>
 
-<% @films.each do |film| %>
-<h2><%= film.title %></h2>
-  <div class="film">
-    <div class="film-image">
-      <% if film.poster.present? %>
-        <%= image_tag film.poster, alt: film.title, height: '300' %> <!-- Modifica le dimensioni come preferisci -->
-      <% else %>
-        No Poster Available <!-- Mostra questo se non c'è un poster -->
-      <% end %>
-    </div>
+<div class="films-grid">
+  <% @films.each do |film| %>
+    <div class="film">
+      <div class="film-image">
+        <% if film.poster.present? %>
+          <%= image_tag film.poster, alt: film.title, height: '150' %> <!-- Dimensioni ridotte per la griglia -->
+        <% else %>
+          No Poster Available
+        <% end %>
+      </div>
 
-
-    <div class="film-details">
-      <p><strong>Year:</strong> <%= film.year %></p>
-      <p><strong>Category:</strong> <%= film.category %></p>
-      <p><strong>Score:</strong> <%= film.score %></p>
-      <p><strong>Status:</strong> <%= film.status %></p>
-      <p><strong>Director:</strong> <%= film.director %></p>
-      <p><strong>Cast:</strong> <%= film.actors %></p>
-      <%= link_to 'View', film_path(film) %> <!-- Link alla pagina show di ogni film -->
+      <div class="film-details">
+        <h2><%= film.title %></h2>
+        <p><strong>Year:</strong> <%= film.year %></p>
+        <p><strong>Category:</strong> <%= film.category %></p>
+        <p><strong>Score:</strong> <%= film.score %></p>
+        <p><strong>Status:</strong> <%= film.status %></p>
+        <p><strong>Director:</strong> <%= film.director %></p>
+        <p><strong>Cast:</strong> <%= film.actors %></p>
+        <%= link_to 'View', film_path(film), class: 'view-button' %> <!-- Stilizzato come un pulsante -->
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
