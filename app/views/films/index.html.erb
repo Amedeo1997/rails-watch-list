@@ -1,0 +1,36 @@
+<h1>Films</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th> <!-- Aggiungi questa colonna per le immagini -->
+      <th>Title</th>
+      <th>Year</th>
+      <th>Category</th>
+      <th>Score</th>
+      <th>Status</th>
+      <th>Director</th>
+      <!-- altre colonne se necessario -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @films.each do |film| %>
+      <tr>
+        <td>
+          <% if film.image.attached? %>
+            <%= image_tag film.image, height: '50' %> <!-- Modifica le dimensioni come preferisci -->
+          <% else %>
+            No Image <!-- Mostra questo se non c'è un'immagine -->
+          <% end %>
+        </td>
+        <td><%= film.title %></td>
+        <td><%= film.year %></td>
+        <td><%= film.category %></td>
+        <td><%= film.score %></td>
+        <td><%= film.status %></td>
+        <td><%= film.director %></td>
+        <!-- altri dettagli del film -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

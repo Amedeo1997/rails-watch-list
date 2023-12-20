@@ -7,3 +7,21 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+User.delete_all
+Film.delete_all
+
+User.create!(
+  email: "Amedeo@example.com",
+  password: "password"
+)
+
+Film.create!(
+  title: "The Shawshank Redemption",
+  year: 1994,
+  category: "Drama",
+  score: 9,
+  status: "watched",
+  trailer: "https://www.youtube.com/watch?v=6hB3S9bIaco",
+  director: "Frank Darabont",
+)
