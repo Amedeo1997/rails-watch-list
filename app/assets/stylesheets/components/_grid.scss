@@ -1,5 +1,6 @@
 body {
-  background-color: #333; // Sfondo scuro per la pagina
+  background-image: image-url('cinema.avif');
+  background-size: cover; // Sfondo scuro per la pagina
   color: #fff; // Testo chiaro per contrastare con lo sfondo scuro
   font-family: Arial, sans-serif; // Un esempio di font
 }
@@ -14,18 +15,36 @@ h1 {
 
 .films-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); // Tre colonne
+  grid-template-columns: repeat(4, 1fr); // Tre colonne
   gap: 20px;
-  width: 40%; // Larghezza ridotta per la griglia
+  width: 50%; // Larghezza ridotta per la griglia
   margin: 40px auto; // Centra la griglia orizzontalmente con un po' di spazio sopra e sotto
 }
 
+@keyframes borderWave {
+  0% {
+    border-color: #00ced1; // Verde acqua
+  }
+  50% {
+    border-color: #ff6347; // Un altro colore che si abbina bene, ad esempio un tono di arancione
+  }
+  100% {
+    border-color: #00ced1; // Ritorna al verde acqua
+  }
+}
+
 .film {
-  background: #444; // Sfondo leggermente più chiaro per le card
-  border: 1px solid #555; // Bordo per le card
+  background: #444;
+  border: 1px solid #555;
   border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
+  transition: transform 0.3s ease;
+  position: relative;
+  &:hover, &:focus {
+    transform: translateY(-5px);
+    animation: borderWave 2s infinite; // Applica l'animazione al passaggio del mouse
+  }
 }
 
 .film-image {

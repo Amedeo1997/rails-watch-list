@@ -12,10 +12,10 @@
   <div class="film-details">
     <p><strong>Year:</strong> <%= @film.year %></p>
     <p><strong>Category:</strong> <%= @film.category %></p>
-    <p><strong>Score:</strong> <%= @film.score %></p>
     <p><strong>Director:</strong> <%= @film.director %></p>
     <p><strong>Cast:</strong> <%= @film.actors %></p>
     <p><strong>Description:</strong> <%= @film.description %></p>
+    <p><strong>Streaming:</strong></p> <%= @film.trailer %>
   </div>
 
   <%= link_to 'Back to Films', films_path, class: 'back-link' %>
