@@ -14,7 +14,11 @@ Film.delete_all
 require 'httparty'
 require 'cgi'
 
-film_titles = ["The Shawshank Redemption", "The Godfather", "The Dark Knight"]
+film_titles = ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Batman", "Batman Begins", "Batman & Robin",
+               "Batman: Under the Red Hood", "Batman: Year One", "Batman v Superman: Dawn of Justice", "Batman: The Killing Joke",
+               "Batman: Assault on Arkham", "Batman: Gotham Knight", "Batman: Bad Blood", "Batman: The Dark Knight Returns, Part 1",
+               "Batman: The Dark Knight Returns, Part 2", "Batman: Under the Red Hood", "Batman: Year One", "Batman v Superman: Dawn of Justice",
+               "Batman: The Killing Joke", "Superman", "Man of Steel", "The Avengers", "Spider-man", "Spider-man 2", "Spider-man 3"]
 
 film_titles.each do |title|
   response = HTTParty.get("http://www.omdbapi.com/?t=#{CGI.escape(title)}&apikey=#{ENV['OMDB_API_KEY']}")
