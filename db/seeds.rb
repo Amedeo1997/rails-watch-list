@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'httparty'
 
 User.delete_all
 Film.delete_all
@@ -16,7 +17,7 @@ User.create!(
   password: "password"
 )
 
-Film.create!(
+film = Film.create!(
   title: "The Shawshank Redemption",
   year: 1994,
   category: "Drama",
@@ -25,3 +26,7 @@ Film.create!(
   trailer: "https://www.youtube.com/watch?v=6hB3S9bIaco",
   director: "Frank Darabont",
 )
+
+path_to_image = Rails.root.join("app/assets/images/shawshank.jpg")
+
+film.image.attach(io: File.open(path_to_image), filename: 'shawshank.jpg', content_type: 'image/jpg')
