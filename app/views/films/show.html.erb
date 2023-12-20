@@ -1,46 +1,22 @@
-<h1><%= @film.title %></h1>
+<div class="film-show">
+  <h1><%= @film.title %></h1>
 
-<p>
-<strong>Description:</strong>
-<%= @film.description %></p>
+  <% if @film.poster.present? %>
+    <div class="film-poster">
+      <%= image_tag @film.poster, alt: @film.title, class: 'poster' %>
+    </div>
+  <% else %>
+    <p>No poster available.</p>
+  <% end %>
 
-<p>
-  <strong>Year:</strong>
-  <%= @film.year %>
-</p>
+  <div class="film-details">
+    <p><strong>Year:</strong> <%= @film.year %></p>
+    <p><strong>Category:</strong> <%= @film.category %></p>
+    <p><strong>Score:</strong> <%= @film.score %></p>
+    <p><strong>Director:</strong> <%= @film.director %></p>
+    <p><strong>Cast:</strong> <%= @film.actors %></p>
+    <p><strong>Description:</strong> <%= @film.description %></p>
+  </div>
 
-<p>
-  <strong>Category:</strong>
-  <%= @film.category %>
-</p>
-
-<p>
-  <strong>Score:</strong>
-  <%= @film.score %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @film.status %>
-</p>
-
-<p>
-  <strong>Director:</strong>
-  <%= @film.director %>
-</p>
-
-<% if @film.trailer.present? %>
-  <p>
-    <strong>Trailer:</strong>
-    <%= link_to 'Watch Trailer', @film.trailer, target: '_blank', rel: 'noopener noreferrer' %>
-  </p>
-<% end %>
-
-<% if @film.image.attached? %>
-  <p>
-    <%= image_tag @film.image %>
-  </p>
-<% end %>
-
-<%= link_to 'Edit', edit_film_path(@film) %> |
-<%= link_to 'Back to Films', films_path %>
+  <%= link_to 'Back to Films', films_path, class: 'back-link' %>
+</div>
