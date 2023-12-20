@@ -1,19 +1,25 @@
 <h1>Films</h1>
 
-    <% @films.each do |film| %>
-      <tr>
-        <td>
-          <% if film.image.attached? %>
-            <%= image_tag film.image, height: '500' %> <!-- Modifica le dimensioni come preferisci -->
-          <% else %>
-            No Image <!-- Mostra questo se non c'è un'immagine -->
-          <% end %>
-        <td><%= film.title %></td>
-        <td><%= film.year %></td>
-        <td><%= film.category %></td>
-        <td><%= film.score %></td>
-        <td><%= film.status %></td>
-        <td><%= film.director %></td>
-         <%= link_to 'View', film_path(film) %> <!-- Link alla pagina show di ogni film -->
-        <!-- altri dettagli del film -->
-    <% end %>
+<% @films.each do |film| %>
+<h2><%= film.title %></h2>
+  <div class="film">
+    <div class="film-image">
+      <% if film.poster.present? %>
+        <%= image_tag film.poster, alt: film.title, height: '300' %> <!-- Modifica le dimensioni come preferisci -->
+      <% else %>
+        No Poster Available <!-- Mostra questo se non c'è un poster -->
+      <% end %>
+    </div>
+
+
+    <div class="film-details">
+      <p><strong>Year:</strong> <%= film.year %></p>
+      <p><strong>Category:</strong> <%= film.category %></p>
+      <p><strong>Score:</strong> <%= film.score %></p>
+      <p><strong>Status:</strong> <%= film.status %></p>
+      <p><strong>Director:</strong> <%= film.director %></p>
+      <p><strong>Cast:</strong> <%= film.actors %></p>
+      <%= link_to 'View', film_path(film) %> <!-- Link alla pagina show di ogni film -->
+    </div>
+  </div>
+<% end %>

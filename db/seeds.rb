@@ -7,26 +7,35 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-require 'httparty'
 
 User.delete_all
 Film.delete_all
 
-User.create!(
-  email: "Amedeo@example.com",
-  password: "password"
-)
+require 'httparty'
+require 'cgi'
 
-film = Film.create!(
-  title: "The Shawshank Redemption",
-  year: 1994,
-  category: "Drama",
-  score: 9,
-  status: "watched",
-  trailer: "https://www.youtube.com/watch?v=6hB3S9bIaco",
-  director: "Frank Darabont",
-)
+film_titles = ["The Shawshank Redemption", "The Godfather", "The Dark Knight"]
 
-path_to_image = Rails.root.join("app/assets/images/shawshank.jpg")
+film_titles.each do |title|
+  response = HTTParty.get("http://www.omdbapi.com/?t=#{CGI.escape(title)}&apikey=#{ENV['OMDB_API_KEY']}")
 
-film.image.attach(io: File.open(path_to_image), filename: 'shawshank.jpg', content_type: 'image/jpg')
+  if response.success?
+    film_data = response.parsed_response
+
+    Film.create!(
+      title: film_data["Title"],
+      year: film_data["Year"],
+      category: film_data["Genre"],
+      director: film_data["Director"],
+      score: film_data["imdbRating"],
+      description: film_data["Plot"],
+      actors: film_data["Actors"],
+      poster: film_data["Poster"],
+      trailer: film_data["Trailer"]
+      # Aggiungi qui altri campi necessari
+    )
+    puts "Film aggiunto: #{film_data["Title"]}"
+  else
+    puts "Errore nel recuperare il film: #{title}"
+  end
+end
