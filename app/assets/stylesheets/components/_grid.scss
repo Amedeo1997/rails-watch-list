@@ -1,7 +1,7 @@
 body {
   background-image: image-url('cinema.avif');
   background-size: cover; // Sfondo scuro per la pagina
-  color: #780000; // Testo chiaro per contrastare con lo sfondo scuro
+  color: #fff; // Testo chiaro per contrastare con lo sfondo scuro
   font-family: Arial, sans-serif; // Un esempio di font
 }
 
@@ -11,6 +11,7 @@ h1 {
   font-family: 'Times New Roman', Times, serif; // Un altro esempio di font
   font-style: italic;
   font-size: 3em;
+  color:#970303;
 }
 
 .films-grid {
@@ -58,6 +59,6 @@ h1 {
   padding: 10px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5); // Sfondo semi-trasparente per il titolo
-  color: #af0a0a; // Testo chiaro
+  color: #970303; // Testo chiaro
   font-size: 1.2em;
 }
