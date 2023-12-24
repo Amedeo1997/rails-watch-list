@@ -16,7 +16,7 @@ require 'cgi'
 
 film_titles = ["Nimona", "All the Light We Cannot See", "500 Days of Summer", "Brother Bear", "Atlantis: The Lost Empire",
                 "Moana", "The Boy, the Mole, the Fox and the Horse", "Seeking a Friend for the End of the World", "Ice Age",
-                "Nights in Rodanthe", "The Notebook", "Marley & Me", "Sweet November"]
+                "Nights in Rodanthe", "The Notebook", "Marley & Me", "Sweet November", "40 year old virgin", "crazy, stupid, love"]
 
 trailers = {
   "Nimona" => "https://www.netflix.com/watch/81444554?trackId=255824129&tctx=0%2C0%2Cdbadbee8-3d7f-49b9-bc90-28ada9484624-907591218%2Cdbadbee8-3d7f-49b9-bc90-28ada9484624-907591218%7C2%2Cunknown%2C%2C%2C%2C%2CVideo%3A81444554%2CminiDpPlayButton",
@@ -31,7 +31,9 @@ trailers = {
   "Nights in Rodanthe" => "https://altadefinizione.bet/drammatico/2660-come-un-uragano.html",
   "The Notebook" => "https://altadefinizione.bet/drammatico/5913-le-pagine-della-nostra-vita.html",
   "Marley & Me" => "https://altadefinizione.bet/commedia/7538-io-e-marley.html",
-  "Sweet November" => "https://altadefinizione.bet/drammatico/13276-sweet-november-dolce-novembre-streaming.html"
+  "Sweet November" => "https://altadefinizione.bet/drammatico/13276-sweet-november-dolce-novembre-streaming.html",
+  "40 year old virgin" => "https://streamingcommunity.cz/watch/6697",
+  "crazy stupid love" => "https://streamingcommunity.cz/watch/4742"
 }
 
 film_titles.each do |title|
