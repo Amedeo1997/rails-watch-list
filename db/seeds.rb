@@ -16,7 +16,7 @@ require 'cgi'
 
 film_titles = ["Nimona", "All the Light We Cannot See", "500 Days of Summer", "Brother Bear", "Atlantis: The Lost Empire",
                 "Moana", "The Boy, the Mole, the Fox and the Horse", "Seeking a Friend for the End of the World", "Ice Age",
-                "Nights in Rodanthe", "The Notebook", "Marley & Me", "Sweet November", "40 year old virgin", "crazy, stupid, love"]
+                "Nights in Rodanthe", "The Notebook", "Marley & Me", "Sweet November", "40 year old virgin", "crazy, stupid, love", "I'm legend", "Titanic", "E.T"]
 
 trailers = {
   "Nimona" => "https://www.netflix.com/watch/81444554?trackId=255824129&tctx=0%2C0%2Cdbadbee8-3d7f-49b9-bc90-28ada9484624-907591218%2Cdbadbee8-3d7f-49b9-bc90-28ada9484624-907591218%7C2%2Cunknown%2C%2C%2C%2C%2CVideo%3A81444554%2CminiDpPlayButton",
