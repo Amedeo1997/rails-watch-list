@@ -1,0 +1,4 @@
+// app/views/films/destroy.js.erb
+<% if @film.destroyed? %>
+  $(".film[data-id='<%= @film.id %>']").fadeOut();
+<% end %>

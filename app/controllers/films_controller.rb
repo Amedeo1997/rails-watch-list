@@ -31,7 +31,11 @@ class FilmsController < ApplicationController
   def destroy
     @film = Film.find(params[:id])
     @film.destroy
-    redirect_to films_path
+
+    respond_to do |format|
+      format.html { redirect_to films_path }
+      format.js   # aggiunge questa linea
+    end
   end
 
   private
