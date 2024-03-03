@@ -79,3 +79,4 @@ end
 gem 'httparty'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'will_paginate', '~> 4.0.0'
+gem 'will_paginate-bootstrap', '~> 1.0'

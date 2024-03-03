@@ -3,6 +3,7 @@ class FilmsController < ApplicationController
   def index
     @films = Film.all
     @films = Film.order(:title)
+    @films = Film.order(:title).paginate(page: params[:page], per_page: 12)
   end
 
   def show
